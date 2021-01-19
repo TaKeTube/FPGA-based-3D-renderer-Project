@@ -1,0 +1,110 @@
+module project #(
+                parameter WIIA = 4;
+                parameter WIFA = 8;
+                parameter WI = 8;
+                parameter WF = 8;
+)
+( 
+                input                        Clk, Reset,
+                input                        proj_start,
+                input [2:0][2:0][WI+WF-1:0]  orig_triangle,
+                input [WIIA+WIFA-1:0]        angle,
+                input                        list_read_done,
+                output logic [2:0][1:0][9:0] proj_triangle
+                output logic                 list_r,
+                output logic                 fifo_w,
+                output logic                 proj_done
+);
+
+    logic orig_triangle_data, new_orig_triangle_data;
+    logic [1:0][9:0] V1, V2, V3, new_V1, new_V2, new_V3;
+
+    enum logic [2:0] {Wait, Take1, Take2, Proj, Write, Done} curr_state, next_state;
+
+    project_cal #(.WIIA(WIIA), .WIFA(WIFA), .WI(WI), .WF(WF)) pc (
+                                                            .orig_triangle(orig_triangle_data),
+                                                            .angle(angle),
+                                                            .proj_triangle(proj_triangle)
+    );
+
+    always_ff @(posedge Clk)
+    begin
+        if (Reset)
+        begin
+            curr_state <= Done;
+            orig_triangle_data <= 0;
+        end
+        else
+        begin
+            curr_state <= next_state;
+            orig_triangle_data <= new_orig_triangle_data;
+        end
+    end
+
+    always_comb
+    begin
+        next_state = curr_state;
+        proj_done = 1'b0;
+        list_r = 1'b0;
+        fifo_w = 1'b0;
+        new_orig_triangle_data = orig_triangle_data;
+        
+        unique case (curr_state)
+        Wait:
+        begin
+            if(proj_start)
+                next_state = Take1;
+        end
+        Take1:
+        begin
+            if(list_read_done)
+                next_state = Done;
+            else
+                next_state = Take2;
+        end
+        Take2:
+        begin
+            next_state = Proj;
+        end
+        Proj:
+        begin
+            next_state = Write;
+        end
+        write:
+        begin
+            next_state = Done
+        end
+        Done:
+        begin
+            next_state = Wait;
+        end
+        endcase
+
+        case (curr_state)
+        Wait:
+        begin
+        end
+        Take1:
+        begin
+            list_r = 1'b1;
+            new_orig_triangle_data = orig_triangle;
+        end
+        Take2:
+        begin
+            new_orig_triangle_data = orig_triangle;
+        end
+        Proj:
+        begin
+        end
+        Write:
+        begin
+            fifo_w = 1'b1;
+        end
+        Done:
+        begin
+            proj_done = 1'b1;
+        end
+        endcase
+    end
+
+endmodule

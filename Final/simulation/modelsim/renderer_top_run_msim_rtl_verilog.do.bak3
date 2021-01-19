@@ -1,0 +1,43 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/vga_clk.v}
+vlog -vlog01compat -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/ram.v}
+vlog -vlog01compat -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/db {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/db/vga_clk_altpll.v}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/display.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/triangle_list_ram.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/triangle_list.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/project_triangle.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/project_cal.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/project.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/matrix_lib.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/list_writer.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/get_view_matrix.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/get_projection_matrix.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/get_mvp_matrix.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/get_model_matrix.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/fixedpoint_lib.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/draw.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/triangle_fifo_ram.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/triangle_fifo.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/VGA_controller.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/renderer_top.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/frame_buffer.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/draw_line.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/control_unit.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/color_mapper.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/clear_frame.sv}
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/draw_triangle.sv}
+
+vlog -sv -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid {D:/GZM/study/ELSE/ECE385_Project/Final/Project/Mid/renderer_top_testbench.sv}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  renderer_top_testbench
+
+add wave *
+view structure
+view signals
+run 15 ms

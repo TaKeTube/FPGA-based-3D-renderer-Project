@@ -1,0 +1,108 @@
+
+State Machine - |renderer_top|nios_system:nios_system|nios_system_sdram:sdram|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |renderer_top|nios_system:nios_system|nios_system_sdram:sdram|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |renderer_top|nios_system:nios_system|nios_system_sdram:sdram|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |renderer_top|nios_system:nios_system|nios_system_sdram:sdram|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |renderer_top|nios_system:nios_system|nios_system_nios2_gen2_0:nios2_gen2_0|nios_system_nios2_gen2_0_cpu:cpu|nios_system_nios2_gen2_0_cpu_nios2_oci:the_nios_system_nios2_gen2_0_cpu_nios2_oci|nios_system_nios2_gen2_0_cpu_debug_slave_wrapper:the_nios_system_nios2_gen2_0_cpu_debug_slave_wrapper|nios_system_nios2_gen2_0_cpu_debug_slave_tck:the_nios_system_nios2_gen2_0_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |renderer_top|list_writer:lw|curr_state
+Name curr_state.Done curr_state.W12 curr_state.W11 curr_state.W10 curr_state.W9 curr_state.W8 curr_state.W7 curr_state.W6 curr_state.W5 curr_state.W4 curr_state.W3 curr_state.W2 curr_state.W1 curr_state.Wait 
+curr_state.Wait 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+curr_state.W1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+curr_state.W2 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+curr_state.W3 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+curr_state.W4 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+curr_state.W5 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+curr_state.W6 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+curr_state.W7 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+curr_state.W8 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+curr_state.W9 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+curr_state.W10 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+curr_state.W11 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.W12 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.Done 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |renderer_top|project:project_instance|curr_state
+Name curr_state.Done curr_state.Write curr_state.Proj curr_state.Take2 curr_state.Take1 curr_state.Wait 
+curr_state.Wait 0 0 0 0 0 0 
+curr_state.Take1 0 0 0 0 1 1 
+curr_state.Take2 0 0 0 1 0 1 
+curr_state.Proj 0 0 1 0 0 1 
+curr_state.Write 0 1 0 0 0 1 
+curr_state.Done 1 0 0 0 0 1 
+
+State Machine - |renderer_top|draw:draw_instance|curr_state
+Name curr_state.Wait curr_state.Draw curr_state.Take2 curr_state.Take1 curr_state.Done 
+curr_state.Done 0 0 0 0 0 
+curr_state.Take1 0 0 0 1 1 
+curr_state.Take2 0 0 1 0 1 
+curr_state.Draw 0 1 0 0 1 
+curr_state.Wait 1 0 0 0 1 
+
+State Machine - |renderer_top|draw:draw_instance|draw_triangle:dt|curr_state
+Name curr_state.Done curr_state.Draw3 curr_state.Trigger3 curr_state.Draw2 curr_state.Trigger2 curr_state.Draw1 curr_state.Trigger1 curr_state.Wait 
+curr_state.Wait 0 0 0 0 0 0 0 0 
+curr_state.Trigger1 0 0 0 0 0 0 1 1 
+curr_state.Draw1 0 0 0 0 0 1 0 1 
+curr_state.Trigger2 0 0 0 0 1 0 0 1 
+curr_state.Draw2 0 0 0 1 0 0 0 1 
+curr_state.Trigger3 0 0 1 0 0 0 0 1 
+curr_state.Draw3 0 1 0 0 0 0 0 1 
+curr_state.Done 1 0 0 0 0 0 0 1 
+
+State Machine - |renderer_top|draw:draw_instance|draw_triangle:dt|draw_line:dl|curr_state
+Name curr_state.Wait curr_state.Done curr_state.Draw 
+curr_state.Wait 0 0 0 
+curr_state.Draw 1 0 1 
+curr_state.Done 1 1 0 
+
+State Machine - |renderer_top|clear_frame:cf|curr_state
+Name curr_state.Wait curr_state.Done curr_state.Clear 
+curr_state.Wait 0 0 0 
+curr_state.Clear 1 0 1 
+curr_state.Done 1 1 0 
+
+State Machine - |renderer_top|control_unit:cu|curr_state
+Name curr_state.Done curr_state.Draw curr_state.Clear curr_state.Init 
+curr_state.Init 0 0 0 0 
+curr_state.Clear 0 0 1 1 
+curr_state.Draw 0 1 0 1 
+curr_state.Done 1 0 0 1 

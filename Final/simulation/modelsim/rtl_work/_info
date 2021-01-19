@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/simulation/modelsim
+vram
+Z1 !s110 1609346104
+!i10b 1
+!s100 UJ:1O=F0:NiBVPACO1c2S2
+IDG=JNlF@_nmikl<oa`_WB0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1608301126
+8D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/ram.v
+FD:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/ram.v
+Z3 L0 39
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1609346104.000000
+!s107 D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/ram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final|D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/ram.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final
+Z8 tCvgOpt 0
+vvga_clk
+R1
+!i10b 1
+!s100 z^J0AX6[cg^^?mY=Yj_Vj0
+IaNP24[0g^M9eHACkI9O=z2
+R2
+R0
+w1605267892
+8D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/vga_clk.v
+FD:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/vga_clk.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/vga_clk.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final|D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/vga_clk.v|
+!i113 1
+R6
+R7
+R8
+vvga_clk_altpll
+R1
+!i10b 1
+!s100 M:z4m=8?iG0fP6=5PXSTl1
+InoR]LNA095lXRIFfVE=Qj0
+R2
+R0
+w1608362824
+8D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/db/vga_clk_altpll.v
+FD:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/db/vga_clk_altpll.v
+L0 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/db/vga_clk_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/db|D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/db/vga_clk_altpll.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+D:/GZM/study/ELSE/ECE385_Project/Final/Project/Final/db
+R8

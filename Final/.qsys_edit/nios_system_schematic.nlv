@@ -1,0 +1,38 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst nios_system.otg_hpi_r -pg 1 -lvl 3 -y 790
+preplace inst nios_system.nios2_gen2_0 -pg 1 -lvl 2 -y 160
+preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 130
+preplace inst nios_system.otg_hpi_address -pg 1 -lvl 3 -y 1090
+preplace inst nios_system.nios2_gen2_0.clock_bridge -pg 1
+preplace inst nios_system -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst nios_system.otg_hpi_reset -pg 1 -lvl 3 -y 890
+preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 3 -y 430
+preplace inst nios_system.sysid_qsys_0 -pg 1 -lvl 3 -y 510
+preplace inst nios_system.otg_hpi_w -pg 1 -lvl 3 -y 990
+preplace inst nios_system.otg_hpi_cs -pg 1 -lvl 3 -y 590
+preplace inst nios_system.otg_hpi_data -pg 1 -lvl 3 -y 690
+preplace inst nios_system.nios2_gen2_0.cpu -pg 1
+preplace inst nios_system.keycode -pg 1 -lvl 3 -y 30
+preplace inst nios_system.sdram_pll -pg 1 -lvl 3 -y 230
+preplace inst nios_system.sdram -pg 1 -lvl 3 -y 330
+preplace inst nios_system.nios2_gen2_0.reset_bridge -pg 1
+preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 120
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.otg_hpi_cs,(SLAVE)otg_hpi_cs.external_connection) 1 0 3 NJ 620 NJ 620 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(MASTER)sdram_pll.c0,(SLAVE)sdram.clk) 1 2 2 800 320 1040
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)nios_system.reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)otg_hpi_address.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)sdram_pll.inclk_interface,(SLAVE)otg_hpi_w.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)otg_hpi_data.clk,(SLAVE)otg_hpi_reset.clk,(MASTER)clk_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)otg_hpi_r.clk,(SLAVE)otg_hpi_cs.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)keycode.clk) 1 1 2 340 1040 760
+preplace netloc EXPORT<net_container>nios_system</net_container>(MASTER)sdram_pll.c1,(MASTER)nios_system.sdram_clk) 1 3 1 N
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.keycode,(SLAVE)keycode.external_connection) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_r.external_connection,(SLAVE)nios_system.otg_hpi_r) 1 0 3 NJ 820 NJ 820 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_address.external_connection,(SLAVE)nios_system.otg_hpi_address) 1 0 3 NJ 1120 NJ 1120 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_w.external_connection,(SLAVE)nios_system.otg_hpi_w) 1 0 3 NJ 1020 NJ 1020 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.otg_hpi_data,(SLAVE)otg_hpi_data.external_connection) 1 0 3 NJ 720 NJ 720 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)sdram.wire,(SLAVE)nios_system.sdram_wire) 1 0 3 NJ 400 NJ 400 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.otg_hpi_reset,(SLAVE)otg_hpi_reset.external_connection) 1 0 3 NJ 920 NJ 920 NJ
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(MASTER)clk_0.clk_reset,(SLAVE)otg_hpi_address.reset,(SLAVE)otg_hpi_r.reset,(SLAVE)otg_hpi_data.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)otg_hpi_reset.reset,(SLAVE)otg_hpi_cs.reset,(SLAVE)otg_hpi_w.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)keycode.reset,(SLAVE)sdram.reset,(SLAVE)onchip_memory2_0.reset1,(MASTER)nios2_gen2_0.debug_reset_request) 1 1 2 320 1140 780
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in,(SLAVE)nios_system.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)jtag_uart_0.irq) 1 2 1 740
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)otg_hpi_address.s1,(SLAVE)sdram.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)keycode.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)otg_hpi_data.s1,(SLAVE)otg_hpi_w.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)otg_hpi_reset.s1,(SLAVE)sdram_pll.pll_slave,(SLAVE)otg_hpi_cs.s1,(MASTER)nios2_gen2_0.data_master,(SLAVE)otg_hpi_r.s1) 1 1 2 360 1160 720
+levelinfo -pg 1 0 110 1150
+levelinfo -hier nios_system 120 150 480 850 1060
