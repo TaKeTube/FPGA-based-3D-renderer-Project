@@ -7,9 +7,7 @@ Team Member: [debugevent90901](https://github.com/debugevent90901) :sweat_smile:
 
 **This is only a project that is for learning and fun, not industrial productive.**
 
-**This repo contains the complete Quartus project.**
-
-**For sorted files, including final proposal, report, testbenches, etc. please see https://github.com/debugevent90901/FPGA-based-3D-graphics-renderer**
+**For complete Quartus Project Files, please refer to https://github.com/TaKeTube/FPGA-based-3D-renderer-Project**
 
 ## 1. Description :page_facing_up:
 ​	This project implements a simple graphics pipeline on FPGA. It can render 3D objects with FPGA, and control the position of camera, rotations of the object through keyboard.
@@ -26,6 +24,10 @@ Original contributor: [WangXuan95/Verilog-FixedPoint](https://github.com/WangXua
 Instead of floating point, we choose to use fixed point number. This is the only outer existing library we used, and we make certian modification to it, see details in /Final/trigonometric_lib.sv.
 
 ## 3. Design & Implementation Details :page_with_curl:
+
+**Top Block Diagram**
+
+<img src="https://github.com/debugevent90901/FPGA-based-3D-graphics-renderer/blob/main/topBD.png?raw=true" style="zoom: 20%;" />
 
 See the **Final Report** and **Final Proposal** for detailed description.
 
